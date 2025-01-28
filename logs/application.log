@@ -1,0 +1,583 @@
+2025-01-28 00:29:55 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-01-28 00:29:56 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Last checkpoint file is missing or corrupted. Will search for the checkpoint files directly.
+2025-01-28 00:29:56 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-01-28 00:29:56 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 40ms to list the files after starting checkpoint
+2025-01-28 00:29:56 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 2
+2025-01-28 00:29:56 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 33ms to construct a log segment
+2025-01-28 00:29:56 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 2 .
+2025-01-28 00:29:56 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 2 .
+2025-01-28 00:40:17 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-01-28 00:40:17 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Last checkpoint file is missing or corrupted. Will search for the checkpoint files directly.
+2025-01-28 00:40:17 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-01-28 00:40:17 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 38ms to list the files after starting checkpoint
+2025-01-28 00:40:17 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 2
+2025-01-28 00:40:17 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 28ms to construct a log segment
+2025-01-28 00:40:17 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 2 .
+2025-01-28 00:40:17 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 2 .
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:18 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 25 ms. row count = 1
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 3 ms. row count = 1
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 1
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:18 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:40:19 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:41:20 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-01-28 00:41:21 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Last checkpoint file is missing or corrupted. Will search for the checkpoint files directly.
+2025-01-28 00:41:21 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-01-28 00:41:21 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 40ms to list the files after starting checkpoint
+2025-01-28 00:41:21 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 2
+2025-01-28 00:41:21 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 31ms to construct a log segment
+2025-01-28 00:41:21 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 2 .
+2025-01-28 00:41:21 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 2 .
+2025-01-28 00:41:21 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:41:21 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:41:21 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-01-28 00:41:21 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 26 ms. row count = 1
+2025-01-28 00:42:44 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:42:44 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:42:44 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:42:44 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:42:44 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:42:44 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:42:44 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:42:44 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:42:44 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:42:44 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:42:44 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:36 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-01-28 00:44:37 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Last checkpoint file is missing or corrupted. Will search for the checkpoint files directly.
+2025-01-28 00:44:37 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-01-28 00:44:37 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 41ms to list the files after starting checkpoint
+2025-01-28 00:44:37 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 2
+2025-01-28 00:44:37 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 26ms to construct a log segment
+2025-01-28 00:44:37 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 2 .
+2025-01-28 00:44:37 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 2 .
+2025-01-28 00:44:37 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:37 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:37 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-01-28 00:44:37 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 28 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:44:38 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:01 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-01-28 00:46:01 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Last checkpoint file is missing or corrupted. Will search for the checkpoint files directly.
+2025-01-28 00:46:01 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-01-28 00:46:01 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 52ms to list the files after starting checkpoint
+2025-01-28 00:46:01 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 2
+2025-01-28 00:46:01 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 24ms to construct a log segment
+2025-01-28 00:46:01 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 2 .
+2025-01-28 00:46:02 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 2 .
+2025-01-28 00:46:02 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:02 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:02 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-01-28 00:46:02 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 25 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:03 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:46:25 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-01-28 00:46:25 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Last checkpoint file is missing or corrupted. Will search for the checkpoint files directly.
+2025-01-28 00:46:25 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-01-28 00:46:25 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 36ms to list the files after starting checkpoint
+2025-01-28 00:46:25 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 2
+2025-01-28 00:46:25 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 29ms to construct a log segment
+2025-01-28 00:46:25 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 2 .
+2025-01-28 00:46:26 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 2 .
+2025-01-28 00:46:26 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:46:26 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:46:26 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-01-28 00:46:26 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 25 ms. row count = 1
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:47:41 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 1
+2025-01-28 00:48:28 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-01-28 00:48:28 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Last checkpoint file is missing or corrupted. Will search for the checkpoint files directly.
+2025-01-28 00:48:28 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-01-28 00:48:28 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 41ms to list the files after starting checkpoint
+2025-01-28 00:48:28 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 2
+2025-01-28 00:48:28 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 25ms to construct a log segment
+2025-01-28 00:48:28 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 2 .
+2025-01-28 00:48:29 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 2 .
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:29 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 29 ms. row count = 1
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 3 ms. row count = 1
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:29 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:48:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:49:03 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-01-28 00:49:03 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Last checkpoint file is missing or corrupted. Will search for the checkpoint files directly.
+2025-01-28 00:49:03 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-01-28 00:49:03 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 41ms to list the files after starting checkpoint
+2025-01-28 00:49:03 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 2
+2025-01-28 00:49:03 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 36ms to construct a log segment
+2025-01-28 00:49:03 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 2 .
+2025-01-28 00:49:04 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 2 .
+2025-01-28 00:49:04 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:49:04 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:49:04 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-01-28 00:49:04 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 24 ms. row count = 1
+2025-01-28 00:49:22 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:49:22 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:49:22 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 1
+2025-01-28 00:49:26 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:49:26 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:49:26 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:49:42 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:49:42 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:49:42 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 1
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 3 ms. row count = 1
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 1
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:00 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:38 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-01-28 00:50:38 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Last checkpoint file is missing or corrupted. Will search for the checkpoint files directly.
+2025-01-28 00:50:38 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-01-28 00:50:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 43ms to list the files after starting checkpoint
+2025-01-28 00:50:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 2
+2025-01-28 00:50:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 24ms to construct a log segment
+2025-01-28 00:50:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 2 .
+2025-01-28 00:50:39 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 2 .
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:39 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 24 ms. row count = 1
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 3 ms. row count = 1
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 2 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 0 ms. row count = 1
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 1 records.
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-01-28 00:50:40 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 1 ms. row count = 1
