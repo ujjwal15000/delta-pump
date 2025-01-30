@@ -35,7 +35,8 @@ public class WorkerVerticle extends AbstractVerticle {
         zkAdmin.addNode(nodeId);
 
         this.config = new HelixConfig(zkHost, "s3-flow-cluster", nodeId);
-        this.participant = startParticipant();
+        this.participant = new Participant(vertx, config);
+        participant.connect();
 
         return Completable.complete();
     }
@@ -43,11 +44,5 @@ public class WorkerVerticle extends AbstractVerticle {
     @Override
     public Completable rxStop(){
         return Completable.complete();
-    }
-
-    private Participant startParticipant() throws Exception {
-        Participant participant = new Participant(vertx, config);
-        participant.connect();
-        return participant;
     }
 }

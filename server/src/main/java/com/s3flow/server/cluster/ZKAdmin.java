@@ -26,7 +26,6 @@ public class ZKAdmin implements Shareable {
   }
 
   public void initCluster() {
-    zkHelixAdmin.dropCluster(config.getClusterName());
     zkHelixAdmin.addCluster(config.getClusterName());
     zkHelixAdmin.addStateModelDef(
         config.getClusterName(), OnlineOfflineSMD.name, OnlineOfflineSMD.build());

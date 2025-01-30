@@ -44,30 +44,6 @@ public class Controller {
     manager.addCustomizedStateConfigChangeListener(controller);
     manager.addLiveInstanceChangeListener(controller);
     manager.addIdealStateChangeListener(controller);
-
-    taskDriver = new TaskDriver(manager);
-    WorkflowConfig.Builder myWorkflowCfgBuilder = new WorkflowConfig.Builder().setWorkFlowType("task-type-1");
-    JobQueue jobQueue = new JobQueue.Builder("job-queue").setWorkflowConfig(myWorkflowCfgBuilder.build()).build();
-    taskDriver.delete(jobQueue.getName());
-    taskDriver.start(jobQueue);
-
-    AtomicInteger i = new AtomicInteger(0);
-    vertx.setPeriodic(5_000, l -> {
-      JobConfig.Builder myJobCfgBuilder = new JobConfig.Builder();
-
-      TaskConfig taskCfg = new TaskConfig("RUN", null, "task-1", null);
-      List<TaskConfig> taskCfgs = List.of(taskCfg);
-      myJobCfgBuilder.addTaskConfigs(taskCfgs);
-
-      String jobName = "job-" + i.incrementAndGet();
-      Map<String, TaskConfig> taskCfgMap = new HashMap<>();
-      taskCfgMap.put(taskCfg.getId(), taskCfg);
-      myJobCfgBuilder.addTaskConfigMap(taskCfgMap);
-      myJobCfgBuilder.setJobId(jobName);
-      myJobCfgBuilder.setWorkflow("w-1");
-      JobConfig myJobCfg = myJobCfgBuilder.build();
-      taskDriver.enqueueJob("job-queue", jobName, myJobCfgBuilder);
-    });
   }
 
   public ZkHelixPropertyStore<ZNRecord> getPropertyStore() {

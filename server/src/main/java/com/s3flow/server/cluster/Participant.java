@@ -31,7 +31,7 @@ public class Participant {
     StateMachineEngine stateMach = manager.getStateMachineEngine();
     stateMach.registerStateModelFactory(
             BuiltInStateModelDefinitions.Task.name(),
-            new TaskStateModelFactory(config.getInstanceName(), new TaskFactory()));
+            new TaskStateModelFactory(vertx, config.getInstanceName(), new TaskFactory()));
     manager.connect();
     this.manager.connect();
     taskDriver = new TaskDriver(manager);

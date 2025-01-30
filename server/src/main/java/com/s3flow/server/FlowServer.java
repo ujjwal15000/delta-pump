@@ -3,6 +3,7 @@ package com.s3flow.server;
 import com.s3flow.server.cluster.Controller;
 import com.s3flow.server.cluster.ZKAdmin;
 import com.s3flow.server.config.HelixConfig;
+import com.s3flow.server.delta.TableReader;
 import com.s3flow.server.verticle.WorkerVerticle;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.plugins.RxJavaPlugins;
@@ -15,6 +16,7 @@ import io.vertx.micrometer.VertxPrometheusOptions;
 import io.vertx.rxjava3.core.RxHelper;
 import io.vertx.rxjava3.core.Vertx;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.hadoop.conf.Configuration;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -29,6 +31,7 @@ public class FlowServer {
   private final HelixConfig config;
   private final ZKAdmin zkAdmin;
   private final Controller controller;
+  private final TableReader tableReader;
 
   private final Thread shutdownHook = new Thread(() -> this.stop(30_000));
 
@@ -38,7 +41,6 @@ public class FlowServer {
   }
 
   public FlowServer() throws Exception {
-
     String zkHost = System.getProperty("zkHost", null);
     assert !Objects.equals(zkHost, null);
 
@@ -51,9 +53,15 @@ public class FlowServer {
 
     this.controller = new Controller(vertx, config);
     controller.connect();
-
-    if (controller.getManager().isLeader())
+    String tablePath = "/Users/ujjwalbagrania/Desktop/notebooks/delta";
+    Configuration conf = new Configuration();
+    this.tableReader =
+        new TableReader(vertx, controller.getManager(), conf, "t1", tablePath, 0L);
+    vertx.sharedData().getLocalMap(SHARED_MAP).put(TableReader.class.getName(), tableReader);
+    if (controller.getManager().isLeader()) {
       ZKAdmin.addClusterConfigs(controller.getManager());
+      tableReader.start();
+    }
   }
 
   private Vertx initVertx() {
@@ -90,14 +98,15 @@ public class FlowServer {
         .rxDeployVerticle(
             WorkerVerticle::new,
             new DeploymentOptions()
-                .setInstances(CpuCoreSensor.availableProcessors())
+                    .setInstances(1)
+//                .setInstances(CpuCoreSensor.availableProcessors())
                 .setWorkerPoolName(WORKER_POOL_NAME))
         .ignoreElement();
   }
 
-  private void stop(int timeout) {
+  private void stop(int delay) {
     Completable.complete()
-        .delay(timeout, TimeUnit.MILLISECONDS)
+        .delay(delay, TimeUnit.MILLISECONDS)
         .andThen(vertx.rxClose())
         .subscribe(
             () -> log.info("successfully stopped server"),
