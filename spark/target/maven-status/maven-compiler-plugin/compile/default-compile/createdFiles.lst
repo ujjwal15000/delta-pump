@@ -1,6 +1,0 @@
-com/s3flow/spark/util/ByteArrayUtils.class
-com/s3flow/spark/writer/S3FlowTable.class
-com/s3flow/spark/S3FlowDataSource.class
-com/s3flow/spark/writer/S3FlowStreamOutputWriter.class
-com/s3flow/spark/writer/SyncDbStreamOutputWriterFactory.class
-com/s3flow/spark/writer/S3FlowFileFormat.class
