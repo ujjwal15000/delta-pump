@@ -3,15 +3,10 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>s3flow</artifactId>
-    <groupId>com.s3flow</groupId>
+    <artifactId>deltapump</artifactId>
+    <groupId>com.deltapump</groupId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>s3flow</name>
-    <modules>
-        <module>server</module>
-        <module>spark</module>
-    </modules>
+    <name>deltapump</name>
 
     <dependencyManagement>
         <dependencies>
@@ -103,6 +98,30 @@
             <groupId>org.apache.helix</groupId>
             <artifactId>helix-lock</artifactId>
             <version>1.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.delta</groupId>
+            <artifactId>delta-kernel-api</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.delta</groupId>
+            <artifactId>delta-kernel-defaults</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>3.3.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs</artifactId>
+            <version>3.3.6</version>
         </dependency>
 
         <!--logging-->
