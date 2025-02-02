@@ -17,13 +17,19 @@ import io.vertx.rxjava3.core.RxHelper;
 import io.vertx.rxjava3.core.Vertx;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.helix.NotificationContext;
+import org.apache.helix.api.listeners.LiveInstanceChangeListener;
+import org.apache.helix.api.listeners.ResourceConfigChangeListener;
+import org.apache.helix.model.LiveInstance;
+import org.apache.helix.model.ResourceConfig;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-public class FlowServer {
+public class PumpServer {
   public static final String WORKER_POOL_NAME = "default-worker-pool";
   public static final String SHARED_MAP = "shared-map";
 
@@ -36,27 +42,54 @@ public class FlowServer {
   private final Thread shutdownHook = new Thread(() -> this.stop(30_000));
 
   public static void main(String[] args) throws Exception {
-    FlowServer server = new FlowServer();
+    PumpServer server = new PumpServer();
     server.start();
   }
 
-  public FlowServer() throws Exception {
+  public PumpServer() throws Exception {
     String zkHost = System.getProperty("zkHost", null);
     assert !Objects.equals(zkHost, null);
 
     String nodeId = UUID.randomUUID().toString();
     this.vertx = initVertx();
-    this.config = new HelixConfig(zkHost, "s3-flow-cluster", nodeId);
+    this.config = new HelixConfig(zkHost, "DELTA_PUMP_CLUSTER", nodeId);
 
     this.zkAdmin = new ZKAdmin(vertx, config);
     vertx.sharedData().getLocalMap(SHARED_MAP).put(ZKAdmin.class.getName(), this.zkAdmin);
 
     this.controller = new Controller(vertx, config);
-    controller.connect();
+    this.controller.connect();
+
+    this.controller
+        .getManager()
+        .addLiveInstanceChangeListener(
+            (LiveInstanceChangeListener)
+                (liveInstances, changeContext) -> {
+                  if (this.controller.getManager().isLeader()) zkAdmin.rebalanceWorkerGroup();
+                });
+
     String tablePath = "/Users/ujjwalbagrania/Desktop/notebooks/delta";
     Configuration conf = new Configuration();
     this.tableReader =
-        new TableReader(vertx, controller.getManager(), conf, "t1", tablePath, 0L);
+        new TableReader(
+            vertx,
+            controller.getManager(),
+            conf,
+            "t1",
+            tablePath,
+            0L,
+            zkAdmin.getWorkerGroupSize());
+
+    this.controller
+        .getManager()
+        .addResourceConfigChangeListener(
+            (resourceConfigs, context) -> {
+              for (ResourceConfig resourceConfig : resourceConfigs) {
+                if (Objects.equals(resourceConfig.getResourceName(), "DELTA_PUMP_WORKER_GROUP")) {
+                  tableReader.updateWorkers(resourceConfig.getNumPartitions());
+                }
+              }
+            });
     vertx.sharedData().getLocalMap(SHARED_MAP).put(TableReader.class.getName(), tableReader);
     if (controller.getManager().isLeader()) {
       ZKAdmin.addClusterConfigs(controller.getManager());
@@ -98,8 +131,8 @@ public class FlowServer {
         .rxDeployVerticle(
             WorkerVerticle::new,
             new DeploymentOptions()
-                    .setInstances(1)
-//                .setInstances(CpuCoreSensor.availableProcessors())
+                //                .setInstances(1)
+                .setInstances(CpuCoreSensor.availableProcessors())
                 .setWorkerPoolName(WORKER_POOL_NAME))
         .ignoreElement();
   }

@@ -1,6 +1,6 @@
 package com.deltapump.server.cluster;
 
-import com.deltapump.server.FlowServer;
+import com.deltapump.server.PumpServer;
 import com.deltapump.server.deltareader.TableReader;
 import io.vertx.rxjava3.core.Vertx;
 import lombok.SneakyThrows;
@@ -45,7 +45,7 @@ public class TaskStateModelFactory extends StateModelFactory<StateModel> {
         super(null, null, null, null);
         this.vertx = vertx;
       this.tableReader =
-          (TableReader) vertx.sharedData().getLocalMap(FlowServer.SHARED_MAP).get(TableReader.class.getName());
+          (TableReader) vertx.sharedData().getLocalMap(PumpServer.SHARED_MAP).get(TableReader.class.getName());
       this.instanceId = workerId;
       this.partition = partition;
       this.taskFactory = taskFactory;

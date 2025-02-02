@@ -1,13 +1,12 @@
 package com.deltapump.server.cluster;
 
-import com.deltapump.server.FlowServer;
+import com.deltapump.server.PumpServer;
 import com.deltapump.server.deltareader.TableReader;
 import com.deltapump.server.model.TableFileState;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Observable;
 import io.vertx.rxjava3.core.Vertx;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.helix.HelixManager;
 import org.apache.helix.NotificationContext;
 import org.apache.helix.model.Message;
 import org.apache.helix.participant.statemachine.StateModel;
@@ -57,7 +56,7 @@ public class WorkerStateModelFactory extends StateModelFactory<StateModel> {
           resourceName,
           partitionName);
       this.tableReader =
-              (TableReader) vertx.sharedData().getLocalMap(FlowServer.SHARED_MAP).get(TableReader.class.getName());
+              (TableReader) vertx.sharedData().getLocalMap(PumpServer.SHARED_MAP).get(TableReader.class.getName());
       this.partitionId = Integer.parseInt(partitionName.split("_")[partitionName.split("_").length - 1]);
     }
 

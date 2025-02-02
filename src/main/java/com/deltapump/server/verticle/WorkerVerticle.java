@@ -1,6 +1,6 @@
 package com.deltapump.server.verticle;
 
-import com.deltapump.server.FlowServer;
+import com.deltapump.server.PumpServer;
 import com.deltapump.server.cluster.Participant;
 import com.deltapump.server.cluster.ZKAdmin;
 import com.deltapump.server.config.HelixConfig;
@@ -30,10 +30,10 @@ public class WorkerVerticle extends AbstractVerticle {
 
         InetAddress localHost = InetAddress.getLocalHost();
         String nodeId = localHost.getHostAddress() + "_" + port;
-        this.zkAdmin = (ZKAdmin) vertx.sharedData().getLocalMap(FlowServer.SHARED_MAP).get(ZKAdmin.class.getName());
+        this.zkAdmin = (ZKAdmin) vertx.sharedData().getLocalMap(PumpServer.SHARED_MAP).get(ZKAdmin.class.getName());
         zkAdmin.addNode(nodeId);
 
-        this.config = new HelixConfig(zkHost, "s3-flow-cluster", nodeId);
+        this.config = new HelixConfig(zkHost, "DELTA_PUMP_CLUSTER", nodeId);
         this.participant = new Participant(vertx, config);
         participant.connect();
 

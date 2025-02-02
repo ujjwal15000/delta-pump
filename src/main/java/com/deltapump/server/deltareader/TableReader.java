@@ -15,6 +15,7 @@ import io.delta.kernel.types.StructType;
 import io.delta.kernel.utils.FileStatus;
 import io.vertx.core.shareddata.Shareable;
 import io.vertx.rxjava3.core.Vertx;
+import lombok.Data;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.hadoop.conf.Configuration;
@@ -28,10 +29,12 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import static io.delta.kernel.internal.util.Utils.singletonCloseableIterator;
 
+@Data
 @Slf4j
 public class TableReader implements Shareable {
   private final ObjectMapper objectMapper = new ObjectMapper();
@@ -44,6 +47,7 @@ public class TableReader implements Shareable {
   private Long startVersion;
   private Long latestVersion;
   private boolean processing = false;
+  private final AtomicInteger numWorkers = new AtomicInteger();
 
   public TableReader(
       Vertx vertx,
@@ -51,7 +55,8 @@ public class TableReader implements Shareable {
       Configuration hadoopConf,
       String tableName,
       String path,
-      Long startVersion) {
+      Long startVersion,
+      Integer numWorkers) {
     this.vertx = vertx;
     this.manager = manager;
     this.tableName = tableName;
@@ -59,6 +64,7 @@ public class TableReader implements Shareable {
     this.table = Table.forPath(engine, path);
     this.path = path;
     this.startVersion = startVersion;
+    this.numWorkers.set(numWorkers);
   }
 
   public void start() {
@@ -66,9 +72,9 @@ public class TableReader implements Shareable {
         5_000,
         l -> {
           long currentVersion = getCurrentVersion();
+          latestVersion = table.getLatestSnapshot(engine).getVersion(engine);
           try {
             if (!processing && currentVersion < latestVersion) {
-              latestVersion = table.getLatestSnapshot(engine).getVersion(engine);
               processCurrentSnapshot(currentVersion);
               processing = true;
             } else {
@@ -115,7 +121,7 @@ public class TableReader implements Shareable {
     manager
         .getHelixPropertyStore()
         .update(
-            String.format("/METADATA_ROOT_PATH/%s", tableName),
+            String.format("/METADATA_ROOT_PATH/%s/VERSION", tableName),
             record -> {
               long currentVersion = record.getLongField("version", startVersion);
               currentVersion++;
@@ -188,7 +194,8 @@ public class TableReader implements Shareable {
             AccessOption.PERSISTENT)
         .getListField("current-state")
         .stream()
-            .map(r -> {
+        .map(
+            r -> {
               try {
                 return objectMapper.readValue(r, TableFileState.class);
               } catch (JsonProcessingException e) {
@@ -198,22 +205,33 @@ public class TableReader implements Shareable {
         .collect(Collectors.toList());
   }
 
-  public List<TableFileState> getFilesForCurrentPartition(Integer partitionId) {
+  public List<TableFileState> getFilesForCurrentPartition(Integer workerId) {
     List<TableFileState> stateMap = getCurrentStateMap();
     List<TableFileState> partitionMap = new ArrayList<>();
-    for(int i=0;i<stateMap.size();i++){
-      if(i % partitionId == 0)
+
+    int numWorkers = this.numWorkers.get();
+    for (int i = 0; i < stateMap.size(); i++) {
+      if (stateMap.get(i).getState() == TableFileState.State.PENDING && i % numWorkers == workerId)
         partitionMap.add(stateMap.get(i));
     }
     return partitionMap;
   }
 
+  public void updateWorkers(Integer numWorkers) {
+    this.numWorkers.set(numWorkers);
+  }
 
   @SneakyThrows
   private List<String> initStateMap(List<ScanFile> files) {
     List<String> map = new ArrayList<>();
     for (int i = 0; i < files.size(); i++) {
-      map.add(objectMapper.writeValueAsString(TableFileState.builder().scanFile(files.get(i)).state(TableFileState.State.PENDING).build()));
+      map.add(
+          objectMapper.writeValueAsString(
+              TableFileState.builder()
+                  .fileId(i)
+                  .scanFile(files.get(i))
+                  .state(TableFileState.State.PENDING)
+                  .build()));
     }
     return map;
   }
@@ -221,44 +239,53 @@ public class TableReader implements Shareable {
   @SneakyThrows
   public void updateFileState(Integer fileId, TableFileState.State state) {
     Stat stat = new Stat();
-    ZNRecord record = manager
-            .getHelixPropertyStore()
-            .get(
-                    String.format("/METADATA_ROOT_PATH/%s/STATE_MAP", tableName),
-                    stat,
-                    AccessOption.PERSISTENT);
-    List<TableFileState> stateMap = record
-            .getListField("current-state")
-            .stream()
-            .map(r -> {
-              try {
-                return objectMapper.readValue(r, TableFileState.class);
-              } catch (JsonProcessingException e) {
-                throw new RuntimeException(e);
-              }
-            })
-            .collect(Collectors.toList());
-    stateMap.get(fileId).setState(state);
-    List<String> updated = stateMap.stream().map(r -> {
-        try {
-            return objectMapper.writeValueAsString(r);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-    }).collect(Collectors.toList());
-    record.setListField("current-state", updated);
     boolean set = false;
-    while(!set){
-      set = manager.getHelixPropertyStore()
-              .set(String.format("/METADATA_ROOT_PATH/%s/STATE_MAP", tableName),
-              record, stat.getVersion(), AccessOption.PERSISTENT);
+    while (!set) {
+      ZNRecord record =
+          manager
+              .getHelixPropertyStore()
+              .get(
+                  String.format("/METADATA_ROOT_PATH/%s/STATE_MAP", tableName),
+                  stat,
+                  AccessOption.PERSISTENT);
+      List<TableFileState> stateMap =
+          record.getListField("current-state").stream()
+              .map(
+                  r -> {
+                    try {
+                      return objectMapper.readValue(r, TableFileState.class);
+                    } catch (JsonProcessingException e) {
+                      throw new RuntimeException(e);
+                    }
+                  })
+              .collect(Collectors.toList());
+      stateMap.get(fileId).setState(state);
+      List<String> updated =
+          stateMap.stream()
+              .map(
+                  r -> {
+                    try {
+                      return objectMapper.writeValueAsString(r);
+                    } catch (JsonProcessingException e) {
+                      throw new RuntimeException(e);
+                    }
+                  })
+              .collect(Collectors.toList());
+      record.setListField("current-state", updated);
+      set =
+          manager
+              .getHelixPropertyStore()
+              .set(
+                  String.format("/METADATA_ROOT_PATH/%s/STATE_MAP", tableName),
+                  record,
+                  stat.getVersion(),
+                  AccessOption.PERSISTENT);
     }
   }
 
-  private boolean isCurrentVersionDone(List<TableFileState> fileStates){
-    for(TableFileState fileState: fileStates){
-      if(!fileState.getState().equals(TableFileState.State.COMPLETED))
-        return false;
+  private boolean isCurrentVersionDone(List<TableFileState> fileStates) {
+    for (TableFileState fileState : fileStates) {
+      if (!fileState.getState().equals(TableFileState.State.COMPLETED)) return false;
     }
     return true;
   }
@@ -278,18 +305,17 @@ public class TableReader implements Shareable {
                 singletonCloseableIterator(fileStatus), physicalReadSchema, Optional.empty());
 
     try (CloseableIterator<FilteredColumnarBatch> dataIter =
-        Scan.transformPhysicalData(engine, scanState, scanFile, physicalDataIter);
-            BufferedWriter writer =
-                new BufferedWriter(
-                    new FileWriter(String.format("target/output-%s.txt", UUID.randomUUID())))
-    ) {
+            Scan.transformPhysicalData(engine, scanState, scanFile, physicalDataIter);
+        BufferedWriter writer =
+            new BufferedWriter(
+                new FileWriter(String.format("target/output-%s.txt", UUID.randomUUID())))) {
       while (dataIter.hasNext()) {
         FilteredColumnarBatch batch = dataIter.next();
         CloseableIterator<Row> rows = batch.getRows();
         while (rows.hasNext()) {
           Row row = rows.next();
-                    writer.append(row.getString(0)).append(" : ").append(row.getString(1));
-                    writer.newLine();
+          writer.append(row.getString(0)).append(" : ").append(row.getString(1));
+          writer.newLine();
           System.out.println(row.getString(0) + " : " + row.getString(1));
         }
       }

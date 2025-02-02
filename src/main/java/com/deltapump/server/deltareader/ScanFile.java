@@ -1,12 +1,15 @@
 package com.deltapump.server.deltareader;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.delta.kernel.data.Row;
-import lombok.Getter;
+import lombok.*;
 
-@Getter
+@Data
+@Builder
+@NoArgsConstructor
 public class ScanFile {
-    final String stateJson;
-    final String fileJson;
+    private String stateJson;
+    private String fileJson;
 
     public ScanFile(Row scanStateRow, Row scanFileRow) {
       this.stateJson = RowSerDe.serializeRowToJson(scanStateRow);
@@ -23,10 +26,12 @@ public class ScanFile {
       this.fileJson = fileJson;
     }
 
+    @JsonIgnore
     public Row getScanRow() {
       return RowSerDe.deserializeRowFromJson(stateJson);
     }
 
+    @JsonIgnore
     public Row getScanFileRow() {
       return RowSerDe.deserializeRowFromJson(fileJson);
     }
