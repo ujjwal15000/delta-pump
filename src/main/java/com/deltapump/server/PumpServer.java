@@ -48,7 +48,7 @@ public class PumpServer {
 
   public PumpServer() throws Exception {
     String zkHost = System.getProperty("zkHost", null);
-    assert !Objects.equals(zkHost, null);
+    Objects.requireNonNull(zkHost);
 
     String nodeId = UUID.randomUUID().toString();
     this.vertx = initVertx();
@@ -68,7 +68,9 @@ public class PumpServer {
                   if (this.controller.getManager().isLeader()) zkAdmin.rebalanceWorkerGroup();
                 });
 
-    String tablePath = "/Users/ujjwalbagrania/Desktop/notebooks/delta";
+    String tablePath = System.getProperty("deltaTable.path");
+    Objects.requireNonNull(tablePath);
+
     Configuration conf = new Configuration();
     this.tableReader =
         new TableReader(
