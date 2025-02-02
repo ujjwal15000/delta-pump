@@ -40,21 +40,22 @@ Prerequisites
 
 ### Installation
 #### Clone the repository
-git clone https://github.com/ujjwal15000/delta-pump.git
-cd delta-pump
+- git clone https://github.com/ujjwal15000/delta-pump.git
+
+- cd delta-pump
 
 #### Build the project
-mvn clean package
+- mvn clean package
 
 #### Configuration
 run the packaged jar with
 
--DzkHost="localhost:2181,localhost:2182"
--DdeltaTable.path="/path/to/delta-table"
+- -DzkHost="localhost:2181,localhost:2182"
+- -DdeltaTable.path="/path/to/delta-table"
 
 #### Contributing
 
-I welcome contributions! Please submit issues and pull requests on GitHub.
+Contributions are welcome! Feel free to submit issues or open pull requests on GitHub.
 
 #### License
 
