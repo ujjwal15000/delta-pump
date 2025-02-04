@@ -28,10 +28,11 @@ public class Participant {
   }
 
   public void connect() throws Exception {
+    int parallelism = Integer.parseInt(System.getProperty("worker.parallelism", "1"));
     StateMachineEngine stateMach = manager.getStateMachineEngine();
     stateMach.registerStateModelFactory(
         OnlineOfflineSMD.name,
-        new WorkerStateModelFactory(vertx, config.getInstanceName()));
+        new WorkerStateModelFactory(vertx, config.getInstanceName(), parallelism));
     manager.connect();
     this.manager.connect();
     taskDriver = new TaskDriver(manager);

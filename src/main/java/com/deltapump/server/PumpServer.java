@@ -79,7 +79,7 @@ public class PumpServer {
             conf,
             "t1",
             tablePath,
-            0L,
+            8L,
             zkAdmin.getWorkerGroupSize());
 
     this.controller
