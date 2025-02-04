@@ -16,11 +16,6 @@ public class ScanFile {
       this.fileJson = RowSerDe.serializeRowToJson(scanFileRow);
     }
 
-    public ScanFile(String config) {
-        this.stateJson = config.split("__")[0];
-        this.fileJson = config.split("__")[1];
-    }
-
     public ScanFile(String stateJson, String fileJson) {
       this.stateJson = stateJson;
       this.fileJson = fileJson;

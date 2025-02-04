@@ -754,3 +754,345 @@
 2025-02-04 12:34:28 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Listing the commit files for versions [9, 10]
 2025-02-04 12:34:28 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 9 ms to list the commit files for versions [9, 10]
 2025-02-04 12:34:28 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Reading the commit files with readSchema struct(StructField(name=add,type=struct(StructField(name=path,type=string,nullable=false,metadata={}), StructField(name=partitionValues,type=map[string, string],nullable=false,metadata={}), StructField(name=size,type=long,nullable=false,metadata={}), StructField(name=modificationTime,type=long,nullable=false,metadata={}), StructField(name=dataChange,type=boolean,nullable=false,metadata={}), StructField(name=deletionVector,type=struct(StructField(name=storageType,type=string,nullable=false,metadata={}), StructField(name=pathOrInlineDv,type=string,nullable=false,metadata={}), StructField(name=offset,type=integer,nullable=true,metadata={}), StructField(name=sizeInBytes,type=integer,nullable=false,metadata={}), StructField(name=cardinality,type=long,nullable=false,metadata={})),nullable=true,metadata={}), StructField(name=tags,type=map[string, string],nullable=true,metadata={}), StructField(name=stats,type=string,nullable=true,metadata={})),nullable=true,metadata={}), StructField(name=protocol,type=struct(StructField(name=minReaderVersion,type=integer,nullable=false,metadata={}), StructField(name=minWriterVersion,type=integer,nullable=false,metadata={}), StructField(name=readerFeatures,type=array[string],nullable=true,metadata={}), StructField(name=writerFeatures,type=array[string],nullable=true,metadata={})),nullable=true,metadata={}))
+2025-02-04 22:20:04 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-02-04 22:20:04 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 10
+2025-02-04 22:20:04 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 10 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:20:04 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 92ms to load last checkpoint before version 10
+2025-02-04 22:20:04 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:20:04 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 38ms to list the files after starting checkpoint
+2025-02-04 22:20:04 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 9
+2025-02-04 22:20:04 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 26ms to construct a log segment
+2025-02-04 22:20:04 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 9 .
+2025-02-04 22:20:05 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 2ms to construct the snapshot (loading protocol and metadata) for 9 .
+2025-02-04 22:20:05 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 11
+2025-02-04 22:20:05 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 11 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:20:05 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 8ms to load last checkpoint before version 11
+2025-02-04 22:20:05 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:20:05 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 11ms to list the files after starting checkpoint
+2025-02-04 22:20:05 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 4ms to construct a log segment
+2025-02-04 22:20:05 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 10 starting from checkpoint version 10.
+2025-02-04 22:20:05 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:20:05 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:20:05 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-02-04 22:20:05 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 32 ms. row count = 112
+2025-02-04 22:20:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 10 starting from checkpoint version 10.
+2025-02-04 22:20:06 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:20:06 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:20:06 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 4 ms. row count = 112
+2025-02-04 22:20:06 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 9
+2025-02-04 22:20:06 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 9 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:20:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 13ms to load last checkpoint before version 9
+2025-02-04 22:20:06 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:20:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 8ms to list the files after starting checkpoint
+2025-02-04 22:20:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 8
+2025-02-04 22:20:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct a log segment
+2025-02-04 22:20:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 8 .
+2025-02-04 22:20:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 8 .
+2025-02-04 22:20:06 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Getting the commit files for versions [9, 9]
+2025-02-04 22:20:06 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Listing the commit files for versions [9, 9]
+2025-02-04 22:20:06 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 9 ms to list the commit files for versions [9, 9]
+2025-02-04 22:20:06 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Reading the commit files with readSchema struct(StructField(name=add,type=struct(StructField(name=path,type=string,nullable=false,metadata={}), StructField(name=partitionValues,type=map[string, string],nullable=false,metadata={}), StructField(name=size,type=long,nullable=false,metadata={}), StructField(name=modificationTime,type=long,nullable=false,metadata={}), StructField(name=dataChange,type=boolean,nullable=false,metadata={}), StructField(name=deletionVector,type=struct(StructField(name=storageType,type=string,nullable=false,metadata={}), StructField(name=pathOrInlineDv,type=string,nullable=false,metadata={}), StructField(name=offset,type=integer,nullable=true,metadata={}), StructField(name=sizeInBytes,type=integer,nullable=false,metadata={}), StructField(name=cardinality,type=long,nullable=false,metadata={})),nullable=true,metadata={}), StructField(name=tags,type=map[string, string],nullable=true,metadata={}), StructField(name=stats,type=string,nullable=true,metadata={})),nullable=true,metadata={}), StructField(name=protocol,type=struct(StructField(name=minReaderVersion,type=integer,nullable=false,metadata={}), StructField(name=minWriterVersion,type=integer,nullable=false,metadata={}), StructField(name=readerFeatures,type=array[string],nullable=true,metadata={}), StructField(name=writerFeatures,type=array[string],nullable=true,metadata={})),nullable=true,metadata={}))
+2025-02-04 22:21:08 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-02-04 22:21:08 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 10
+2025-02-04 22:21:08 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 10 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:21:08 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 83ms to load last checkpoint before version 10
+2025-02-04 22:21:08 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:21:08 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 46ms to list the files after starting checkpoint
+2025-02-04 22:21:08 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 9
+2025-02-04 22:21:08 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 21ms to construct a log segment
+2025-02-04 22:21:08 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 9 .
+2025-02-04 22:21:09 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 9 .
+2025-02-04 22:21:09 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 11
+2025-02-04 22:21:09 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 11 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:21:09 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 11ms to load last checkpoint before version 11
+2025-02-04 22:21:09 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:21:09 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 12ms to list the files after starting checkpoint
+2025-02-04 22:21:09 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 6ms to construct a log segment
+2025-02-04 22:21:09 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 10 starting from checkpoint version 10.
+2025-02-04 22:21:09 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:21:09 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:21:09 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-02-04 22:21:09 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 32 ms. row count = 112
+2025-02-04 22:21:10 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 10 starting from checkpoint version 10.
+2025-02-04 22:21:10 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:21:10 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:21:10 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 5 ms. row count = 112
+2025-02-04 22:21:10 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 9
+2025-02-04 22:21:10 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 9 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:21:10 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 16ms to load last checkpoint before version 9
+2025-02-04 22:21:10 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:21:10 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 15ms to list the files after starting checkpoint
+2025-02-04 22:21:10 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 8
+2025-02-04 22:21:10 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 2ms to construct a log segment
+2025-02-04 22:21:10 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 8 .
+2025-02-04 22:21:10 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 8 .
+2025-02-04 22:21:10 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Getting the commit files for versions [10, 10]
+2025-02-04 22:21:10 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Listing the commit files for versions [10, 10]
+2025-02-04 22:21:10 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 7 ms to list the commit files for versions [10, 10]
+2025-02-04 22:21:10 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Reading the commit files with readSchema struct(StructField(name=add,type=struct(StructField(name=path,type=string,nullable=false,metadata={}), StructField(name=partitionValues,type=map[string, string],nullable=false,metadata={}), StructField(name=size,type=long,nullable=false,metadata={}), StructField(name=modificationTime,type=long,nullable=false,metadata={}), StructField(name=dataChange,type=boolean,nullable=false,metadata={}), StructField(name=deletionVector,type=struct(StructField(name=storageType,type=string,nullable=false,metadata={}), StructField(name=pathOrInlineDv,type=string,nullable=false,metadata={}), StructField(name=offset,type=integer,nullable=true,metadata={}), StructField(name=sizeInBytes,type=integer,nullable=false,metadata={}), StructField(name=cardinality,type=long,nullable=false,metadata={})),nullable=true,metadata={}), StructField(name=tags,type=map[string, string],nullable=true,metadata={}), StructField(name=stats,type=string,nullable=true,metadata={})),nullable=true,metadata={}), StructField(name=protocol,type=struct(StructField(name=minReaderVersion,type=integer,nullable=false,metadata={}), StructField(name=minWriterVersion,type=integer,nullable=false,metadata={}), StructField(name=readerFeatures,type=array[string],nullable=true,metadata={}), StructField(name=writerFeatures,type=array[string],nullable=true,metadata={})),nullable=true,metadata={}))
+2025-02-04 22:22:54 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-02-04 22:22:54 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 10
+2025-02-04 22:22:54 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 10 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:22:54 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 88ms to load last checkpoint before version 10
+2025-02-04 22:22:54 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:22:54 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 41ms to list the files after starting checkpoint
+2025-02-04 22:22:54 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 9
+2025-02-04 22:22:54 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 15ms to construct a log segment
+2025-02-04 22:22:54 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 9 .
+2025-02-04 22:22:54 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 9 .
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 11
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 11 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 10ms to load last checkpoint before version 11
+2025-02-04 22:22:55 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 11ms to list the files after starting checkpoint
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 5ms to construct a log segment
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 10 starting from checkpoint version 10.
+2025-02-04 22:22:55 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:22:55 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:22:55 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-02-04 22:22:55 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 29 ms. row count = 112
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 10 starting from checkpoint version 10.
+2025-02-04 22:22:55 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:22:55 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:22:55 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 3 ms. row count = 112
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 9
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 9 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 11ms to load last checkpoint before version 9
+2025-02-04 22:22:55 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 13ms to list the files after starting checkpoint
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 8
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct a log segment
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 8 .
+2025-02-04 22:22:55 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 8 .
+2025-02-04 22:22:55 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Getting the commit files for versions [10, 10]
+2025-02-04 22:22:55 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Listing the commit files for versions [10, 10]
+2025-02-04 22:22:55 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 5 ms to list the commit files for versions [10, 10]
+2025-02-04 22:22:55 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Reading the commit files with readSchema struct(StructField(name=add,type=struct(StructField(name=path,type=string,nullable=false,metadata={}), StructField(name=partitionValues,type=map[string, string],nullable=false,metadata={}), StructField(name=size,type=long,nullable=false,metadata={}), StructField(name=modificationTime,type=long,nullable=false,metadata={}), StructField(name=dataChange,type=boolean,nullable=false,metadata={}), StructField(name=deletionVector,type=struct(StructField(name=storageType,type=string,nullable=false,metadata={}), StructField(name=pathOrInlineDv,type=string,nullable=false,metadata={}), StructField(name=offset,type=integer,nullable=true,metadata={}), StructField(name=sizeInBytes,type=integer,nullable=false,metadata={}), StructField(name=cardinality,type=long,nullable=false,metadata={})),nullable=true,metadata={}), StructField(name=tags,type=map[string, string],nullable=true,metadata={}), StructField(name=stats,type=string,nullable=true,metadata={})),nullable=true,metadata={}), StructField(name=protocol,type=struct(StructField(name=minReaderVersion,type=integer,nullable=false,metadata={}), StructField(name=minWriterVersion,type=integer,nullable=false,metadata={}), StructField(name=readerFeatures,type=array[string],nullable=true,metadata={}), StructField(name=writerFeatures,type=array[string],nullable=true,metadata={})),nullable=true,metadata={}))
+2025-02-04 22:54:11 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-02-04 22:54:11 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 10
+2025-02-04 22:54:11 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 10 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:54:11 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 64ms to load last checkpoint before version 10
+2025-02-04 22:54:11 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:54:11 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 42ms to list the files after starting checkpoint
+2025-02-04 22:54:11 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 9
+2025-02-04 22:54:11 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 18ms to construct a log segment
+2025-02-04 22:54:11 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 9 .
+2025-02-04 22:54:11 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 2ms to construct the snapshot (loading protocol and metadata) for 9 .
+2025-02-04 22:54:12 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 11
+2025-02-04 22:54:12 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 11 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:54:12 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 9ms to load last checkpoint before version 11
+2025-02-04 22:54:12 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:54:12 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 15ms to list the files after starting checkpoint
+2025-02-04 22:54:12 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 6ms to construct a log segment
+2025-02-04 22:54:12 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 10 starting from checkpoint version 10.
+2025-02-04 22:54:12 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:54:12 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:54:12 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-02-04 22:54:12 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 27 ms. row count = 112
+2025-02-04 22:54:13 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 10 starting from checkpoint version 10.
+2025-02-04 22:54:13 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:54:13 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:54:13 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 3 ms. row count = 112
+2025-02-04 22:54:13 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 9
+2025-02-04 22:54:13 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 9 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:54:13 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 15ms to load last checkpoint before version 9
+2025-02-04 22:54:13 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:54:13 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 11ms to list the files after starting checkpoint
+2025-02-04 22:54:13 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 8
+2025-02-04 22:54:13 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct a log segment
+2025-02-04 22:54:13 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 8 .
+2025-02-04 22:54:13 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 8 .
+2025-02-04 22:54:13 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Getting the commit files for versions [10, 10]
+2025-02-04 22:54:13 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Listing the commit files for versions [10, 10]
+2025-02-04 22:54:13 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 9 ms to list the commit files for versions [10, 10]
+2025-02-04 22:54:13 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Reading the commit files with readSchema struct(StructField(name=add,type=struct(StructField(name=path,type=string,nullable=false,metadata={}), StructField(name=partitionValues,type=map[string, string],nullable=false,metadata={}), StructField(name=size,type=long,nullable=false,metadata={}), StructField(name=modificationTime,type=long,nullable=false,metadata={}), StructField(name=dataChange,type=boolean,nullable=false,metadata={}), StructField(name=deletionVector,type=struct(StructField(name=storageType,type=string,nullable=false,metadata={}), StructField(name=pathOrInlineDv,type=string,nullable=false,metadata={}), StructField(name=offset,type=integer,nullable=true,metadata={}), StructField(name=sizeInBytes,type=integer,nullable=false,metadata={}), StructField(name=cardinality,type=long,nullable=false,metadata={})),nullable=true,metadata={}), StructField(name=tags,type=map[string, string],nullable=true,metadata={}), StructField(name=stats,type=string,nullable=true,metadata={})),nullable=true,metadata={}), StructField(name=protocol,type=struct(StructField(name=minReaderVersion,type=integer,nullable=false,metadata={}), StructField(name=minWriterVersion,type=integer,nullable=false,metadata={}), StructField(name=readerFeatures,type=array[string],nullable=true,metadata={}), StructField(name=writerFeatures,type=array[string],nullable=true,metadata={})),nullable=true,metadata={}))
+2025-02-04 22:54:33 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 10
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 10 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 75ms to load last checkpoint before version 10
+2025-02-04 22:54:33 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 37ms to list the files after starting checkpoint
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 9
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 15ms to construct a log segment
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 9 .
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 9 .
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 11
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 11 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 10ms to load last checkpoint before version 11
+2025-02-04 22:54:33 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 14ms to list the files after starting checkpoint
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 4ms to construct a log segment
+2025-02-04 22:54:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 10 starting from checkpoint version 10.
+2025-02-04 22:54:34 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:54:34 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:54:34 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-02-04 22:54:34 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 32 ms. row count = 112
+2025-02-04 22:54:34 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 10 starting from checkpoint version 10.
+2025-02-04 22:54:34 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:54:34 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:54:34 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 3 ms. row count = 112
+2025-02-04 22:54:34 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 9
+2025-02-04 22:54:34 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 9 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:54:34 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 11ms to load last checkpoint before version 9
+2025-02-04 22:54:34 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:54:34 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 10ms to list the files after starting checkpoint
+2025-02-04 22:54:34 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 8
+2025-02-04 22:54:34 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct a log segment
+2025-02-04 22:54:34 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 8 .
+2025-02-04 22:54:34 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 8 .
+2025-02-04 22:54:34 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Getting the commit files for versions [10, 10]
+2025-02-04 22:54:34 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Listing the commit files for versions [10, 10]
+2025-02-04 22:54:34 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 8 ms to list the commit files for versions [10, 10]
+2025-02-04 22:54:34 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Reading the commit files with readSchema struct(StructField(name=add,type=struct(StructField(name=path,type=string,nullable=false,metadata={}), StructField(name=partitionValues,type=map[string, string],nullable=false,metadata={}), StructField(name=size,type=long,nullable=false,metadata={}), StructField(name=modificationTime,type=long,nullable=false,metadata={}), StructField(name=dataChange,type=boolean,nullable=false,metadata={}), StructField(name=deletionVector,type=struct(StructField(name=storageType,type=string,nullable=false,metadata={}), StructField(name=pathOrInlineDv,type=string,nullable=false,metadata={}), StructField(name=offset,type=integer,nullable=true,metadata={}), StructField(name=sizeInBytes,type=integer,nullable=false,metadata={}), StructField(name=cardinality,type=long,nullable=false,metadata={})),nullable=true,metadata={}), StructField(name=tags,type=map[string, string],nullable=true,metadata={}), StructField(name=stats,type=string,nullable=true,metadata={})),nullable=true,metadata={}), StructField(name=protocol,type=struct(StructField(name=minReaderVersion,type=integer,nullable=false,metadata={}), StructField(name=minWriterVersion,type=integer,nullable=false,metadata={}), StructField(name=readerFeatures,type=array[string],nullable=true,metadata={}), StructField(name=writerFeatures,type=array[string],nullable=true,metadata={})),nullable=true,metadata={}))
+2025-02-04 22:55:04 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-02-04 22:55:04 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 10
+2025-02-04 22:55:04 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 10 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:55:04 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 57ms to load last checkpoint before version 10
+2025-02-04 22:55:04 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:55:04 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 34ms to list the files after starting checkpoint
+2025-02-04 22:55:04 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 9
+2025-02-04 22:55:04 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 30ms to construct a log segment
+2025-02-04 22:55:04 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 9 .
+2025-02-04 22:55:05 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 9 .
+2025-02-04 22:55:05 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 11
+2025-02-04 22:55:05 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 11 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:55:05 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 12ms to load last checkpoint before version 11
+2025-02-04 22:55:05 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:55:05 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 16ms to list the files after starting checkpoint
+2025-02-04 22:55:05 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 9ms to construct a log segment
+2025-02-04 22:55:05 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 10 starting from checkpoint version 10.
+2025-02-04 22:55:05 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:55:05 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:55:05 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-02-04 22:55:05 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 29 ms. row count = 112
+2025-02-04 22:55:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 10 starting from checkpoint version 10.
+2025-02-04 22:55:06 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 22:55:06 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 22:55:06 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 4 ms. row count = 112
+2025-02-04 22:55:06 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 9
+2025-02-04 22:55:06 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 9 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 22:55:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 11ms to load last checkpoint before version 9
+2025-02-04 22:55:06 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 22:55:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 5ms to list the files after starting checkpoint
+2025-02-04 22:55:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 8
+2025-02-04 22:55:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct a log segment
+2025-02-04 22:55:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 8 .
+2025-02-04 22:55:06 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 8 .
+2025-02-04 22:55:06 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Getting the commit files for versions [10, 10]
+2025-02-04 22:55:06 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Listing the commit files for versions [10, 10]
+2025-02-04 22:55:06 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 6 ms to list the commit files for versions [10, 10]
+2025-02-04 22:55:06 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Reading the commit files with readSchema struct(StructField(name=add,type=struct(StructField(name=path,type=string,nullable=false,metadata={}), StructField(name=partitionValues,type=map[string, string],nullable=false,metadata={}), StructField(name=size,type=long,nullable=false,metadata={}), StructField(name=modificationTime,type=long,nullable=false,metadata={}), StructField(name=dataChange,type=boolean,nullable=false,metadata={}), StructField(name=deletionVector,type=struct(StructField(name=storageType,type=string,nullable=false,metadata={}), StructField(name=pathOrInlineDv,type=string,nullable=false,metadata={}), StructField(name=offset,type=integer,nullable=true,metadata={}), StructField(name=sizeInBytes,type=integer,nullable=false,metadata={}), StructField(name=cardinality,type=long,nullable=false,metadata={})),nullable=true,metadata={}), StructField(name=tags,type=map[string, string],nullable=true,metadata={}), StructField(name=stats,type=string,nullable=true,metadata={})),nullable=true,metadata={}), StructField(name=protocol,type=struct(StructField(name=minReaderVersion,type=integer,nullable=false,metadata={}), StructField(name=minWriterVersion,type=integer,nullable=false,metadata={}), StructField(name=readerFeatures,type=array[string],nullable=true,metadata={}), StructField(name=writerFeatures,type=array[string],nullable=true,metadata={})),nullable=true,metadata={}))
+2025-02-04 23:00:38 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 10
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 10 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 62ms to load last checkpoint before version 10
+2025-02-04 23:00:38 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 37ms to list the files after starting checkpoint
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 9
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 26ms to construct a log segment
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 9 .
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 2ms to construct the snapshot (loading protocol and metadata) for 9 .
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 11
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 11 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 12ms to load last checkpoint before version 11
+2025-02-04 23:00:38 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 15ms to list the files after starting checkpoint
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 5ms to construct a log segment
+2025-02-04 23:00:38 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 10 starting from checkpoint version 10.
+2025-02-04 23:00:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 23:00:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 23:00:39 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-02-04 23:00:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 30 ms. row count = 112
+2025-02-04 23:00:39 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 10 starting from checkpoint version 10.
+2025-02-04 23:00:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 23:00:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 23:00:39 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 4 ms. row count = 112
+2025-02-04 23:00:39 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 9
+2025-02-04 23:00:39 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 9 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 23:00:39 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 15ms to load last checkpoint before version 9
+2025-02-04 23:00:39 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 23:00:39 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 12ms to list the files after starting checkpoint
+2025-02-04 23:00:39 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 8
+2025-02-04 23:00:39 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct a log segment
+2025-02-04 23:00:39 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 8 .
+2025-02-04 23:00:39 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 8 .
+2025-02-04 23:00:39 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Getting the commit files for versions [10, 10]
+2025-02-04 23:00:39 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Listing the commit files for versions [10, 10]
+2025-02-04 23:00:39 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 8 ms to list the commit files for versions [10, 10]
+2025-02-04 23:00:39 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Reading the commit files with readSchema struct(StructField(name=add,type=struct(StructField(name=path,type=string,nullable=false,metadata={}), StructField(name=partitionValues,type=map[string, string],nullable=false,metadata={}), StructField(name=size,type=long,nullable=false,metadata={}), StructField(name=modificationTime,type=long,nullable=false,metadata={}), StructField(name=dataChange,type=boolean,nullable=false,metadata={}), StructField(name=deletionVector,type=struct(StructField(name=storageType,type=string,nullable=false,metadata={}), StructField(name=pathOrInlineDv,type=string,nullable=false,metadata={}), StructField(name=offset,type=integer,nullable=true,metadata={}), StructField(name=sizeInBytes,type=integer,nullable=false,metadata={}), StructField(name=cardinality,type=long,nullable=false,metadata={})),nullable=true,metadata={}), StructField(name=tags,type=map[string, string],nullable=true,metadata={}), StructField(name=stats,type=string,nullable=true,metadata={})),nullable=true,metadata={}), StructField(name=protocol,type=struct(StructField(name=minReaderVersion,type=integer,nullable=false,metadata={}), StructField(name=minWriterVersion,type=integer,nullable=false,metadata={}), StructField(name=readerFeatures,type=array[string],nullable=true,metadata={}), StructField(name=writerFeatures,type=array[string],nullable=true,metadata={})),nullable=true,metadata={}))
+2025-02-04 23:01:29 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 10
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 10 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 71ms to load last checkpoint before version 10
+2025-02-04 23:01:29 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 42ms to list the files after starting checkpoint
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 9
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 15ms to construct a log segment
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 9 .
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 9 .
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 11
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 11 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 13ms to load last checkpoint before version 11
+2025-02-04 23:01:29 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 13ms to list the files after starting checkpoint
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 6ms to construct a log segment
+2025-02-04 23:01:29 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 10 starting from checkpoint version 10.
+2025-02-04 23:01:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 23:01:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 23:01:30 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-02-04 23:01:30 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 26 ms. row count = 112
+2025-02-04 23:01:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 10 starting from checkpoint version 10.
+2025-02-04 23:01:31 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 23:01:31 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 23:01:31 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 4 ms. row count = 112
+2025-02-04 23:01:31 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 9
+2025-02-04 23:01:31 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 9 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 23:01:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 10ms to load last checkpoint before version 9
+2025-02-04 23:01:31 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 23:01:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 9ms to list the files after starting checkpoint
+2025-02-04 23:01:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 8
+2025-02-04 23:01:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 3ms to construct a log segment
+2025-02-04 23:01:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 8 .
+2025-02-04 23:01:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 8 .
+2025-02-04 23:01:31 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Getting the commit files for versions [10, 10]
+2025-02-04 23:01:31 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Listing the commit files for versions [10, 10]
+2025-02-04 23:01:31 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 9 ms to list the commit files for versions [10, 10]
+2025-02-04 23:01:31 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Reading the commit files with readSchema struct(StructField(name=add,type=struct(StructField(name=path,type=string,nullable=false,metadata={}), StructField(name=partitionValues,type=map[string, string],nullable=false,metadata={}), StructField(name=size,type=long,nullable=false,metadata={}), StructField(name=modificationTime,type=long,nullable=false,metadata={}), StructField(name=dataChange,type=boolean,nullable=false,metadata={}), StructField(name=deletionVector,type=struct(StructField(name=storageType,type=string,nullable=false,metadata={}), StructField(name=pathOrInlineDv,type=string,nullable=false,metadata={}), StructField(name=offset,type=integer,nullable=true,metadata={}), StructField(name=sizeInBytes,type=integer,nullable=false,metadata={}), StructField(name=cardinality,type=long,nullable=false,metadata={})),nullable=true,metadata={}), StructField(name=tags,type=map[string, string],nullable=true,metadata={}), StructField(name=stats,type=string,nullable=true,metadata={})),nullable=true,metadata={}), StructField(name=protocol,type=struct(StructField(name=minReaderVersion,type=integer,nullable=false,metadata={}), StructField(name=minWriterVersion,type=integer,nullable=false,metadata={}), StructField(name=readerFeatures,type=array[string],nullable=true,metadata={}), StructField(name=writerFeatures,type=array[string],nullable=true,metadata={})),nullable=true,metadata={}))
+2025-02-04 23:05:31 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-02-04 23:05:31 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 10
+2025-02-04 23:05:31 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 10 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 23:05:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 55ms to load last checkpoint before version 10
+2025-02-04 23:05:31 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 23:05:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 41ms to list the files after starting checkpoint
+2025-02-04 23:05:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 9
+2025-02-04 23:05:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 29ms to construct a log segment
+2025-02-04 23:05:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 9 .
+2025-02-04 23:05:31 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct the snapshot (loading protocol and metadata) for 9 .
+2025-02-04 23:05:32 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 11
+2025-02-04 23:05:32 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 11 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 23:05:32 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 14ms to load last checkpoint before version 11
+2025-02-04 23:05:32 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 23:05:32 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 13ms to list the files after starting checkpoint
+2025-02-04 23:05:32 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 6ms to construct a log segment
+2025-02-04 23:05:32 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 10 starting from checkpoint version 10.
+2025-02-04 23:05:32 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 23:05:32 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 23:05:32 [main] INFO  o.a.hadoop.io.compress.CodecPool - Got brand-new decompressor [.snappy]
+2025-02-04 23:05:32 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 31 ms. row count = 112
+2025-02-04 23:05:32 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 10 starting from checkpoint version 10.
+2025-02-04 23:05:32 [main] INFO  o.a.p.h.InternalParquetRecordReader - RecordReader initialized will read a total of 112 records.
+2025-02-04 23:05:32 [main] INFO  o.a.p.h.InternalParquetRecordReader - at row 0. reading next block
+2025-02-04 23:05:32 [main] INFO  o.a.p.h.InternalParquetRecordReader - block read in memory in 6 ms. row count = 112
+2025-02-04 23:05:32 [main] INFO  i.d.k.i.checkpoints.Checkpointer - Try to find the last complete checkpoint before version 9
+2025-02-04 23:05:33 [main] INFO  i.d.k.i.checkpoints.Checkpointer - No complete checkpoint found before version 9 in file:/Users/ujjwalbagrania/Desktop/notebooks/delta/_delta_log
+2025-02-04 23:05:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 15ms to load last checkpoint before version 9
+2025-02-04 23:05:33 [main] WARN  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Starting checkpoint is missing. Listing from version as 0
+2025-02-04 23:05:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 11ms to list the files after starting checkpoint
+2025-02-04 23:05:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - Verified delta files are contiguous from version 0 to 8
+2025-02-04 23:05:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 1ms to construct a log segment
+2025-02-04 23:05:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Loading version 8 .
+2025-02-04 23:05:33 [main] INFO  i.d.k.i.snapshot.SnapshotManager - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 0ms to construct the snapshot (loading protocol and metadata) for 8 .
+2025-02-04 23:05:33 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Getting the commit files for versions [10, 10]
+2025-02-04 23:05:33 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Listing the commit files for versions [10, 10]
+2025-02-04 23:05:33 [main] INFO  i.d.k.internal.DeltaLogActionUtils - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Took 9 ms to list the commit files for versions [10, 10]
+2025-02-04 23:05:33 [main] INFO  io.delta.kernel.internal.TableImpl - file:/Users/ujjwalbagrania/Desktop/notebooks/delta: Reading the commit files with readSchema struct(StructField(name=add,type=struct(StructField(name=path,type=string,nullable=false,metadata={}), StructField(name=partitionValues,type=map[string, string],nullable=false,metadata={}), StructField(name=size,type=long,nullable=false,metadata={}), StructField(name=modificationTime,type=long,nullable=false,metadata={}), StructField(name=dataChange,type=boolean,nullable=false,metadata={}), StructField(name=deletionVector,type=struct(StructField(name=storageType,type=string,nullable=false,metadata={}), StructField(name=pathOrInlineDv,type=string,nullable=false,metadata={}), StructField(name=offset,type=integer,nullable=true,metadata={}), StructField(name=sizeInBytes,type=integer,nullable=false,metadata={}), StructField(name=cardinality,type=long,nullable=false,metadata={})),nullable=true,metadata={}), StructField(name=tags,type=map[string, string],nullable=true,metadata={}), StructField(name=stats,type=string,nullable=true,metadata={})),nullable=true,metadata={}), StructField(name=protocol,type=struct(StructField(name=minReaderVersion,type=integer,nullable=false,metadata={}), StructField(name=minWriterVersion,type=integer,nullable=false,metadata={}), StructField(name=readerFeatures,type=array[string],nullable=true,metadata={}), StructField(name=writerFeatures,type=array[string],nullable=true,metadata={})),nullable=true,metadata={}))

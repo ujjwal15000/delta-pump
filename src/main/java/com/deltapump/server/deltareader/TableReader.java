@@ -13,7 +13,11 @@ import io.delta.kernel.expressions.*;
 import io.delta.kernel.internal.DeltaLogActionUtils;
 import io.delta.kernel.internal.InternalScanFileUtils;
 import io.delta.kernel.internal.TableImpl;
+import io.delta.kernel.internal.actions.AddFile;
+import io.delta.kernel.internal.data.ColumnarBatchRow;
 import io.delta.kernel.internal.data.ScanStateRow;
+import io.delta.kernel.internal.fs.Path;
+import io.delta.kernel.internal.replay.ActionWrapper;
 import io.delta.kernel.types.StructType;
 import io.delta.kernel.utils.FileStatus;
 import io.reactivex.rxjava3.core.Completable;
@@ -34,6 +38,7 @@ import org.apache.zookeeper.data.Stat;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URI;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -144,81 +149,32 @@ public class TableReader implements Shareable {
     addNewStateMap(scanFiles);
   }
 
-  public static void main(String[] args) {
-    Configuration conf = new Configuration();
-    Engine engine = DefaultEngine.create(conf);
-    Table table = TableImpl.forPath(engine, "/Users/ujjwalbagrania/Desktop/notebooks/delta");
-
-    List<String> v10 = getScannedFiles(table, engine, 9);
-    //    List<String> v10 = new ArrayList<>();
-    List<String> v11 = getScannedFiles(table, engine, 10);
-    v11.removeAll(v10);
-
-    Snapshot currSnapshot = table.getSnapshotAsOfVersion(engine, 8);
+  private static List<ScanFile> getScanFiles(Table table, Engine engine, long version) {
+    Snapshot currSnapshot = table.getSnapshotAsOfVersion(engine, 10);
     Scan scan = currSnapshot.getScanBuilder(engine).build();
     Row scanState = scan.getScanState(engine);
     List<ScanFile> scanFiles = new ArrayList<>();
-
-    for (String r : v11) {
-      ScanFile scanFile = new ScanFile(RowSerDe.serializeRowToJson(scanState), r);
-      scanFiles.add(scanFile);
-    }
-    System.out.println(v10.get(0));
-    System.out.println(v11.get(0));
-    System.out.println(scanFiles.size());
 
     CloseableIterator<ColumnarBatch> fileIter =
         ((TableImpl) table)
-            .getChanges(engine, 9, 10, Set.of(DeltaLogActionUtils.DeltaAction.ADD));
-    List<String> files = new ArrayList<>();
+            .getChanges(engine, version, version, Set.of(DeltaLogActionUtils.DeltaAction.ADD));
+
     while (fileIter.hasNext()) {
       try (CloseableIterator<Row> scanFileRows = fileIter.next().getRows()) {
         while (scanFileRows.hasNext()) {
-          files.add(RowSerDe.serializeRowToJson(scanFileRows.next()));
+          Row scanFileRow = scanFileRows.next();
+          if (!scanFileRow.isNullAt(
+              scanFileRow.getSchema().indexOf(DeltaLogActionUtils.DeltaAction.ADD.colName)))
+            scanFiles.add(
+                new ScanFile(
+                    RowSerDe.serializeRowToJson(scanState),
+                    RowSerDe.serializeRowToJson(scanFileRow)));
         }
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
-    }
-    System.out.println(files.get(0));
-    System.out.println(files.size());
-  }
-
-  private static List<ScanFile> getScanFiles(Table table, Engine engine, long version) {
-    List<String> versionFiles = getScannedFiles(table, engine, version);
-    List<String> prevVersionFiles =
-        version == 0 ? new ArrayList<>() : getScannedFiles(table, engine, version - 1);
-    versionFiles.removeAll(prevVersionFiles);
-
-    Snapshot currSnapshot = table.getSnapshotAsOfVersion(engine, version);
-    Scan scan = currSnapshot.getScanBuilder(engine).build();
-    Row scanState = scan.getScanState(engine);
-    List<ScanFile> scanFiles = new ArrayList<>();
-
-    for (String r : versionFiles) {
-      ScanFile scanFile = new ScanFile(RowSerDe.serializeRowToJson(scanState), r);
-      scanFiles.add(scanFile);
     }
     return scanFiles;
-  }
-
-  private static List<String> getScannedFiles(Table table, Engine engine, long version) {
-    Snapshot currSnapshot = table.getSnapshotAsOfVersion(engine, version);
-    Scan scan = currSnapshot.getScanBuilder(engine).build();
-    Row scanState = scan.getScanState(engine);
-    CloseableIterator<FilteredColumnarBatch> fileIter = scan.getScanFiles(engine);
-
-    List<String> files = new ArrayList<>();
-    while (fileIter.hasNext()) {
-      try (CloseableIterator<Row> scanFileRows = fileIter.next().getRows()) {
-        while (scanFileRows.hasNext()) {
-          files.add(RowSerDe.serializeRowToJson(scanFileRows.next()));
-        }
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
-    }
-    return files;
   }
 
   private void addNewStateMap(List<ScanFile> files) {
@@ -382,7 +338,15 @@ public class TableReader implements Shareable {
     ScanFile work = new ScanFile(state, file);
     Row scanState = work.getScanRow();
     Row scanFile = work.getScanFileRow();
-    FileStatus fileStatus = InternalScanFileUtils.getAddFileStatus(scanFile);
+
+    Row addFile = scanFile.getStruct(scanFile.getSchema().indexOf(DeltaLogActionUtils.DeltaAction.ADD.colName));
+    String path = addFile.getString(addFile.getSchema().indexOf("path"));
+    long size = addFile.getLong(addFile.getSchema().indexOf("size"));
+    long modificationTime = addFile.getLong(addFile.getSchema().indexOf("modificationTime"));
+    String absolutePath =
+            new Path(new Path(URI.create(table.getPath(engine))), new Path(URI.create(path))).toString();
+
+    FileStatus fileStatus = FileStatus.of(absolutePath, size, modificationTime);
     StructType physicalReadSchema = ScanStateRow.getPhysicalDataReadSchema(engine, scanState);
 
     CloseableIterator<ColumnarBatch> physicalDataIter =
@@ -391,11 +355,10 @@ public class TableReader implements Shareable {
             .readParquetFiles(
                 singletonCloseableIterator(fileStatus), physicalReadSchema, Optional.empty());
 
-    return Flowable.<FilteredColumnarBatch>generate(
+    return Flowable.<ColumnarBatch>generate(
             emitter -> {
-              CloseableIterator<FilteredColumnarBatch> dataIter =
-                  Scan.transformPhysicalData(engine, scanState, scanFile, physicalDataIter);
-              while (dataIter.hasNext()) emitter.onNext(dataIter.next());
+              while (physicalDataIter.hasNext())
+                emitter.onNext(physicalDataIter.next());
               emitter.onComplete();
             })
         .flatMap(
