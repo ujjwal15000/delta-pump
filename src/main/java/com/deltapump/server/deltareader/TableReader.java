@@ -5,24 +5,17 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.delta.kernel.*;
 import io.delta.kernel.data.ColumnarBatch;
-import io.delta.kernel.data.FilteredColumnarBatch;
 import io.delta.kernel.data.Row;
 import io.delta.kernel.defaults.engine.DefaultEngine;
 import io.delta.kernel.engine.Engine;
-import io.delta.kernel.expressions.*;
 import io.delta.kernel.internal.DeltaLogActionUtils;
-import io.delta.kernel.internal.InternalScanFileUtils;
 import io.delta.kernel.internal.TableImpl;
-import io.delta.kernel.internal.actions.AddFile;
-import io.delta.kernel.internal.data.ColumnarBatchRow;
 import io.delta.kernel.internal.data.ScanStateRow;
 import io.delta.kernel.internal.fs.Path;
-import io.delta.kernel.internal.replay.ActionWrapper;
 import io.delta.kernel.types.StructType;
 import io.delta.kernel.utils.FileStatus;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Flowable;
-import io.reactivex.rxjava3.core.Observable;
 import io.vertx.core.shareddata.Shareable;
 import io.vertx.rxjava3.core.Vertx;
 import lombok.Data;
@@ -35,8 +28,6 @@ import org.apache.helix.HelixManager;
 import org.apache.helix.zookeeper.datamodel.ZNRecord;
 import org.apache.zookeeper.data.Stat;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.util.*;
@@ -150,7 +141,7 @@ public class TableReader implements Shareable {
   }
 
   private static List<ScanFile> getScanFiles(Table table, Engine engine, long version) {
-    Snapshot currSnapshot = table.getSnapshotAsOfVersion(engine, 10);
+    Snapshot currSnapshot = table.getSnapshotAsOfVersion(engine, version);
     Scan scan = currSnapshot.getScanBuilder(engine).build();
     Row scanState = scan.getScanState(engine);
     List<ScanFile> scanFiles = new ArrayList<>();
@@ -339,12 +330,15 @@ public class TableReader implements Shareable {
     Row scanState = work.getScanRow();
     Row scanFile = work.getScanFileRow();
 
-    Row addFile = scanFile.getStruct(scanFile.getSchema().indexOf(DeltaLogActionUtils.DeltaAction.ADD.colName));
+    Row addFile =
+        scanFile.getStruct(
+            scanFile.getSchema().indexOf(DeltaLogActionUtils.DeltaAction.ADD.colName));
     String path = addFile.getString(addFile.getSchema().indexOf("path"));
     long size = addFile.getLong(addFile.getSchema().indexOf("size"));
     long modificationTime = addFile.getLong(addFile.getSchema().indexOf("modificationTime"));
     String absolutePath =
-            new Path(new Path(URI.create(table.getPath(engine))), new Path(URI.create(path))).toString();
+        new Path(new Path(URI.create(table.getPath(engine))), new Path(URI.create(path)))
+            .toString();
 
     FileStatus fileStatus = FileStatus.of(absolutePath, size, modificationTime);
     StructType physicalReadSchema = ScanStateRow.getPhysicalDataReadSchema(engine, scanState);
@@ -355,55 +349,22 @@ public class TableReader implements Shareable {
             .readParquetFiles(
                 singletonCloseableIterator(fileStatus), physicalReadSchema, Optional.empty());
 
-    return Flowable.<ColumnarBatch>generate(
-            emitter -> {
-              while (physicalDataIter.hasNext())
-                emitter.onNext(physicalDataIter.next());
-              emitter.onComplete();
-            })
-        .flatMap(
-            batch ->
-                Flowable.generate(
-                    emitter -> {
-                      CloseableIterator<Row> rows = batch.getRows();
-                      while (rows.hasNext()) {
-                        emitter.onNext(rows.next());
-                      }
-                      emitter.onComplete();
-                    }));
+    return getFlowableFromClosableIterator(physicalDataIter)
+        .map(ColumnarBatch::getRows)
+        .flatMap(TableReader::getFlowableFromClosableIterator);
   }
 
-  @SneakyThrows
-  public void processBatch(String state, String file) {
-    ScanFile work = new ScanFile(state, file);
-    Row scanState = work.getScanRow();
-    Row scanFile = work.getScanFileRow();
-
-    FileStatus fileStatus = InternalScanFileUtils.getAddFileStatus(scanFile);
-    StructType physicalReadSchema = ScanStateRow.getPhysicalDataReadSchema(engine, scanState);
-
-    CloseableIterator<ColumnarBatch> physicalDataIter =
-        engine
-            .getParquetHandler()
-            .readParquetFiles(
-                singletonCloseableIterator(fileStatus), physicalReadSchema, Optional.empty());
-
-    try (CloseableIterator<FilteredColumnarBatch> dataIter =
-            Scan.transformPhysicalData(engine, scanState, scanFile, physicalDataIter);
-        BufferedWriter writer =
-            new BufferedWriter(
-                new FileWriter(String.format("target/output-%s.txt", UUID.randomUUID())))) {
-      while (dataIter.hasNext()) {
-        FilteredColumnarBatch batch = dataIter.next();
-        CloseableIterator<Row> rows = batch.getRows();
-        while (rows.hasNext()) {
-          Row row = rows.next();
-          writer.append(row.getString(0)).append(" : ").append(row.getString(1));
-          writer.newLine();
-          System.out.println(row.getString(0) + " : " + row.getString(1));
-        }
-      }
-    } catch (Exception e) {
-    }
+  public static <T> Flowable<T> getFlowableFromClosableIterator(CloseableIterator<T> iterator) {
+    return Flowable.generate(
+        () -> iterator,
+        (iter, emitter) -> {
+          if (iter.hasNext()) {
+            emitter.onNext(iter.next());
+          } else {
+            emitter.onComplete();
+          }
+          return iter;
+        },
+        CloseableIterator::close);
   }
 }
